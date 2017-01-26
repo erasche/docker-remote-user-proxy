@@ -1,7 +1,7 @@
-FROM alpine
+FROM alpine:3.4
 MAINTAINER Eric Rasche <esr@tamu.edu>
 
-ENV DOCKERIZE_VERSION v0.2.0
+ENV DOCKERIZE_VERSION v0.3.0
 
 RUN apk update && \
     apk add wget nginx && \
