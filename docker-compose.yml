@@ -1,13 +1,14 @@
 version: '2'
 services:
   remote_user:
-    image: remote_user_proxy
+    #build: .
+    image: quay.io/tamu_cpt/remote-user-proxy:latest
     links:
-      - test:target
+      - echo:target
     ports:
       - "80"
     environment:
-      BACKEND_URL: "http://target:10000"
+      BACKEND_URL: "http://target:8000"
       REMOTE_USER: esr@tamu.edu
-  test:
-    build: test/
+  echo:
+    image: quay.io/tamu_cpt/httpbin:latest
