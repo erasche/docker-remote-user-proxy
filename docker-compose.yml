@@ -9,6 +9,6 @@ services:
       - "80"
     environment:
       BACKEND_URL: "http://target:8000"
-      REMOTE_USER: esr@tamu.edu
+      REMOTE_USER: user@example.com
   echo:
     image: quay.io/tamu_cpt/httpbin:latest

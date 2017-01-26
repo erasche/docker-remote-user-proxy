@@ -8,9 +8,26 @@ and proxy your request to a backend service.
 
 ## Testing
 
-A docker compose file is included for your convenience, launching this
-(`docker-compose up`) will launch the proxy image as well as a netcat image
-which simply listens on a port.
+Simply run `test.sh`:
 
-A single curl requests made to the proxy image will show up in the netcat image,
-allowing you to see the headers which were made available.
+```console
+$ bash test.sh
+Pulling containers
+Launching containers
+Containers started, please check for REMOTE_USER in the following request
+{
+  "headers": {
+    "Accept": "*/*",
+    "Connection": "close",
+    "Host": "target:8000",
+    "Remote-User": "user@example.com",
+    "User-Agent": "curl/7.47.0",
+    "X-Forwarded-Host": "0.0.0.0",
+    "X-Url-Scheme": "https"
+  }
+}
+```
+
+## LICENSE
+
+AGPL-3.0
