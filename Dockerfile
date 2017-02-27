@@ -1,7 +1,9 @@
 FROM alpine:3.4
 MAINTAINER Eric Rasche <esr@tamu.edu>
 
-ENV DOCKERIZE_VERSION v0.3.0
+ENV DOCKERIZE_VERSION=v0.3.0 \
+    REMOTE_USER_HEADER="REMOTE_USER" \
+    REMOTE_USER="admin@example.com"
 
 RUN apk update && \
     apk add wget nginx && \
